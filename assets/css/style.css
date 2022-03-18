@@ -1,0 +1,15 @@
+header {
+    text-align: center;
+    background-color: blue;
+    padding: 20px 35px;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.current-weather {
+    border: solid;
+}
+
+.card {
+    min-width: 135px;
+}

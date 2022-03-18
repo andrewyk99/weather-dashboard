@@ -11,5 +11,7 @@ header {
 }
 
 .card {
-    min-width: 135px;
+    min-width: 142px;
+    font-size: 14px;
+    font-weight: bold;
 }

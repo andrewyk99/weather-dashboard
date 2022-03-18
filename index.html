@@ -24,8 +24,9 @@
                 </h2>
                 <form class="search">
                     <input name="input-value" id="input-value" type="search" placeholder="City">
-                    <button id="button">Search</button>
+                    <button id="currSubmit">Search</button>
                 </form>
+                <div id="history"></div>
             </section>
         
             <!--Right side column that holds all the weather information-->
@@ -33,7 +34,7 @@
                 <!--Box that holds the current day's weather information-->
                 <section class="row">
                     <div class="current-weather">
-                        <h2 class="city"><span id="currCity">City</span> <span id="date">(MM/DD)</span><img id="currIcon"></h2>
+                        <h2 class="city"><span id="currCity">City</span> <span id="date">(MM/DD/YYYY)</span><img id="currIcon"></h2>
                         <p>Temp: <span id="temp">--</span>&degF</p>
                         <p>Wind: <span id="wind">--</span> MPH</p>
                         <p>Humidity: <span id="humi">--</span> %</p>

@@ -26,6 +26,10 @@ var getCity = function(){
         // if the request from the url is successful
         if (response.ok) {
             response.json().then(function(data){
+                if (data.length === 0) {
+                    alert("Unable to find city.")
+                    return false;
+                }
                 geoLat = data[0].lat;
                 geoLon = data[0].lon;
                 geoName = data[0].name;
@@ -79,6 +83,16 @@ var getWeather = function(geoLat, geoLon, geoName) {
         $("#wind").html(currData.wind_speed);
         $("#humi").html(currData.humidity);
         $("#uvi").html(currData.uvi);
+        $("#uvi").removeClass("bg-success bg-warning bg-danger");
+        if (currData.uvi < 4) {
+            $("#uvi").addClass("bg-success");
+        }
+        else if (currData.uvi > 3 && currData.uvi < 8) {
+            $("#uvi").addClass("bg-warning");
+        }
+        else if (currData.uvi > 7) {
+            $("#uvi").addClass("bg-danger");
+        } 
     };
     
     // function to create the cards of the next five days
@@ -112,9 +126,10 @@ var getWeather = function(geoLat, geoLon, geoName) {
         cardWind.innerHTML = "Wind: " + futureData.wind_speed + " MPH";
         weatherCard.appendChild(cardWind);
         
+        // gives card humidity value
         var cardHumi = document.createElement("p");
         cardHumi.innerHTML = "Humiditiy: " + futureData.humidity + " %";
-    weatherCard.appendChild(cardHumi);
+        weatherCard.appendChild(cardHumi);
 };
 
 // function for to save to localStorage
@@ -127,7 +142,7 @@ var saveSearchedCities = function(city) {
     // puts city at the top
     storedCities.unshift(city);
     // only saves up to 5 cities
-    while (storedCities > 5) {
+    while (storedCities.length > 5) {
         storedCities.pop();
     }
     localStorage.setItem("cities", JSON.stringify(storedCities));

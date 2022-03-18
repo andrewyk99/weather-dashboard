@@ -1,13 +1,39 @@
 header {
     text-align: center;
-    background-color: blue;
+    background-image: linear-gradient(to right, blue, purple);
     padding: 20px 35px;
     color: white;
+    font-weight: bold;
     margin-bottom: 20px;
+}
+
+.search-text {
+    font-weight: bold;
+}
+
+.search {
+    border-bottom: solid;
+    margin-bottom: 10px;
+}
+.search-box {
+    width: 100%;
+    height: 40px;
+    margin-bottom: 10px;
+    text-align: left;
+}
+
+.curr-submit {
+    width: 100%;
+    margin-bottom: 10px;
 }
 
 .current-weather {
     border: solid;
+}
+
+.uvi {
+    width: 50px;
+    margin-bottom: 20px;
 }
 
 .card {

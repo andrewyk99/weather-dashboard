@@ -19,12 +19,12 @@
         <div class="row">
             <!--Left side column for search city and history-->
             <section class="col-lg-3">
-                <h2>
+                <h2 class="search-text">
                     Search for a City:
                 </h2>
                 <form class="search">
-                    <input name="input-value" id="input-value" type="search" placeholder="City">
-                    <button id="currSubmit">Search</button>
+                    <input name="input-value" class="form-control search-box" id="input-value" type="search" placeholder="City">
+                    <button class="curr-submit btn btn-info rounded" id="currSubmit">Search</button>
                 </form>
                 <div id="history"></div>
             </section>
@@ -38,7 +38,7 @@
                         <p>Temp: <span id="temp">--</span>&degF</p>
                         <p>Wind: <span id="wind">--</span> MPH</p>
                         <p>Humidity: <span id="humi">--</span> %</p>
-                        <p>UV Index: <span id="uvi">--</span></p>
+                        <div>UV Index: <div id="uvi" class="rounded-1 d-inline-block text-center text-white uvi">--</div></div>
                     </div>
                 </section>
                 

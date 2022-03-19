@@ -15,7 +15,7 @@ date = dt.toLocaleString();
 var getCity = function(){
     
     // url for geocoding api using variables to be adaptive to what the user types
-    var geoApi = "http://api.openweathermap.org/geo/1.0/direct?q=" + cityName + ",us&limit=1&appid=" + apiKey;
+    var geoApi = "https://api.openweathermap.org/geo/1.0/direct?q=" + cityName + ",us&limit=1&appid=" + apiKey;
     var geoLat;
     var geoLon;
     var geoName;

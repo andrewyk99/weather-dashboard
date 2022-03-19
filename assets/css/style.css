@@ -27,6 +27,14 @@ header {
     margin-bottom: 10px;
 }
 
+.clear-history-btn {
+    margin-bottom: 10px;
+    width: 100%;
+}
+
+.clear-btn {
+    width: 100%;
+}
 .current-weather {
     border: solid;
 }

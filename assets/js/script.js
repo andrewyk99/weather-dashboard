@@ -155,12 +155,15 @@ var loadSearchedCities = function() {
     // if there are no saved cities, must make it create an empty array
     if (!storedCities) {
         storedCities = [];
+        deleteHistory();
         return false;
     }
     for (var i = 0; i < storedCities.length; i++) {
         var cityHistory = storedCities[i];
         printStoredCities(cityHistory);
-    }    
+    }
+    
+    deleteHistory();
 };
 
 // function to add already searched cities into buttons
@@ -169,6 +172,16 @@ var printStoredCities = function(city) {
     previousCities.className = "btn btn-primary col-12 mb-3"
     previousCities.textContent = city;
     $("#history").append(previousCities);
+};
+
+// Clear cities button if there is anything in the localStorage or hides it if it's empty
+var deleteHistory = function() {
+    if (storedCities.length > 0) {
+        $("#removeCities").removeClass("d-none");
+    }
+    if (storedCities.length === 0) {
+        $("#removeCities").addClass("d-none");
+    }
 };
 
 // listens for click from the submit button when searching a city
@@ -182,6 +195,27 @@ $("#currSubmit").on("click", function(event){
 $("#history").on("click", "button", function(){
     cityName = $(this).text();
     getCity();
+});
+
+
+// function to clear history after user clicks button
+$("#btnRemoveCities").on("click", function(event) {
+    // resets localStorage to empty
+    storedCities = [];
+    localStorage.setItem("cities", JSON.stringify(storedCities));
+    // calls the loadSearchedCities function
+    loadSearchedCities();
+
+    // clears page from previously searched city
+    $("#currCity").html("City");
+    $("#date").html("(MM/DD/YYYY)");
+    $("#currIcon").removeAttr("src");
+    $("#temp").html("--");
+    $("#wind").html("--");
+    $("#humi").html("--");
+    $("#uvi").html("--");
+    $("#uvi").removeClass("bg-success bg-warning bg-success");
+    fiveCardsEl.innerHTML = "";
 });
 
 loadSearchedCities();

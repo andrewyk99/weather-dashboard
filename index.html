@@ -22,11 +22,18 @@
                 <h2 class="search-text">
                     Search for a City:
                 </h2>
+                <!--Typable search box-->
                 <form class="search">
                     <input name="input-value" class="form-control search-box" id="input-value" type="search" placeholder="City">
+                    <!--Submit search button for searched cities-->
                     <button class="curr-submit btn btn-info rounded" id="currSubmit">Search</button>
                 </form>
+                <!--History of previously searched cities-->
                 <div id="history"></div>
+                <!--Clear history button-->
+                <div class="clear-history-btn" id="removeCities">
+                    <button class="btn btn-danger clear-btn" id="btnRemoveCities">Clear Cities</button>
+                </div>
             </section>
         
             <!--Right side column that holds all the weather information-->
@@ -38,7 +45,9 @@
                         <p>Temp: <span id="temp">--</span>&degF</p>
                         <p>Wind: <span id="wind">--</span> MPH</p>
                         <p>Humidity: <span id="humi">--</span> %</p>
-                        <div>UV Index: <div id="uvi" class="rounded-1 d-inline-block text-center text-white uvi">--</div></div>
+                        <div>UV Index: 
+                            <div id="uvi" class="rounded-1 d-inline-block text-center text-white uvi">--</div>
+                        </div>
                     </div>
                 </section>
                 
